@@ -1,8 +1,8 @@
-document.getElementById('form-vuelo').addEventListener('submit', function(e) {
+document.getElementById('form-vuelo').addEventListener('submit', function (e) {
   e.preventDefault();
 
   const destino = document.getElementById('destino').value;
-  const tipo = document.querySelector('input[name="tipo"]:checked').value;
+  const tipo = document.querySelector('input[name="tipo"]:checked')?.value;
   const fechaIdaStr = document.getElementById('fecha-ida').value;
   const fechaVueltaStr = document.getElementById('fecha-vuelta').value;
   const pasajeros = parseInt(document.getElementById('pasajeros').value, 10);
@@ -12,17 +12,23 @@ document.getElementById('form-vuelo').addEventListener('submit', function(e) {
   mensajeError.textContent = '';
   resultado.textContent = '';
 
+  // Validar fechas
+  const fechaIda = new Date(fechaIdaStr);
+  const fechaVuelta = fechaVueltaStr ? new Date(fechaVueltaStr) : null;
+
   if (tipo === 'ida-vuelta') {
     if (!fechaVueltaStr) {
       mensajeError.textContent = 'Debe seleccionar una fecha de vuelta.';
       return;
     }
 
-    const fechaIda = new Date(fechaIdaStr);
-    const fechaVuelta = new Date(fechaVueltaStr);
+    if (isNaN(fechaIda.getTime()) || isNaN(fechaVuelta.getTime())) {
+      mensajeError.textContent = 'Las fechas ingresadas no son válidas.';
+      return;
+    }
 
     if (fechaVuelta <= fechaIda) {
-      mensajeError.textContent = 'La fecha de vuelta debe ser posterior a la fecha de ida.';
+      mensajeError.textContent = 'La fecha de vuelta debe ser posterior a la de ida.';
       return;
     }
   }
@@ -35,6 +41,11 @@ document.getElementById('form-vuelo').addEventListener('submit', function(e) {
 
   if (!precios[destino]) {
     mensajeError.textContent = 'Seleccione un destino válido.';
+    return;
+  }
+
+  if (isNaN(pasajeros) || pasajeros < 1) {
+    mensajeError.textContent = 'Ingrese un número válido de pasajeros.';
     return;
   }
 
