@@ -12,7 +12,6 @@ document.getElementById('form-vuelo').addEventListener('submit', function (e) {
   mensajeError.textContent = '';
   resultado.textContent = '';
 
-  // Validar fechas
   const fechaIda = new Date(fechaIdaStr);
   const fechaVuelta = fechaVueltaStr ? new Date(fechaVueltaStr) : null;
 
