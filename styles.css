@@ -1,0 +1,86 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f4f8fb;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 32px 24px;
+}
+
+h1 {
+  text-align: center;
+  color: #2a3b4c;
+  margin-bottom: 24px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-weight: 500;
+  color: #2a3b4c;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="email"],
+select {
+  padding: 10px 12px;
+  border: 1px solid #cfd8dc;
+  border-radius: 6px;
+  background: #f9fbfc;
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+input:focus, select:focus {
+  border: 1.5px solid #6cb2eb;
+  outline: none;
+}
+
+button[type="button"] {
+  background: #6cb2eb;
+  color: #fff;
+  border: none;
+  padding: 12px 0;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+button[type="button"]:hover {
+  background: #3490dc;
+}
+
+#resultadoPrecio {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 18px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 16px 4px;
+  }
+  form {
+    gap: 12px;
+  }
+}
