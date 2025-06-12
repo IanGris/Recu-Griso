@@ -6,7 +6,6 @@ body {
   align-items: center;
   min-height: 100vh;
 }
-
 .formulario {
   background: #fff;
   padding: 2rem 2.5rem;
@@ -17,25 +16,21 @@ body {
   gap: 1rem;
   min-width: 340px;
 }
-
 .campo {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
 }
-
 input[type="text"], input[type="date"], input[type="number"], select {
   padding: 0.5rem;
   border: 1px solid #cfd8dc;
   border-radius: 8px;
   background: #f9fafb;
 }
-
 .radio-group {
   display: flex;
   gap: 1.5rem;
 }
-
 button {
   background: #4f8cff;
   color: #fff;
@@ -50,13 +45,11 @@ button {
 button:hover {
   background: #2563eb;
 }
-
 .error {
   color: #e53935;
   font-size: 0.95rem;
   margin-top: 0.3rem;
 }
-
 .resultado {
   margin-top: 1rem;
   font-size: 1.15rem;
