@@ -1,6 +1,5 @@
 document.getElementById('form-vuelo').addEventListener('submit', function(e) {
   e.preventDefault();
-
   const destino = document.getElementById('destino').value;
   const tipo = document.querySelector('input[name="tipo"]:checked').value;
   const fechaIda = document.getElementById('fecha-ida').value;
@@ -11,8 +10,6 @@ document.getElementById('form-vuelo').addEventListener('submit', function(e) {
   const resultado = document.getElementById('resultado');
   mensajeError.textContent = '';
   resultado.textContent = '';
-
-  // Validar fechas
   if (tipo === 'ida-vuelta') {
     if (!fechaVuelta) {
       mensajeError.textContent = 'Debe seleccionar una fecha de vuelta.';
@@ -24,7 +21,6 @@ document.getElementById('form-vuelo').addEventListener('submit', function(e) {
     }
   }
 
-  // Precios base por pasajero
   const precios = {
     'COR': 120000,
     'MDZ': 210800,
@@ -42,7 +38,7 @@ document.getElementById('form-vuelo').addEventListener('submit', function(e) {
   }
 
   let total = precioBase * pasajeros;
-  total = total * 1.21; // Agregar 21% de IVA
+  total = total * 1.21; 
 
   resultado.textContent = `Precio total: $${total.toLocaleString('es-AR', {minimumFractionDigits: 2})}`;
 });
