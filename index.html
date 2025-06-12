@@ -8,10 +8,12 @@
 <body>
   <form id="form-vuelo" class="formulario">
     <h2>Simulador de Costos de Vuelos</h2>
+
     <div class="campo">
       <label>Origen</label>
       <input type="text" value="SLA - Salta" readonly>
     </div>
+
     <div class="campo">
       <label for="destino">Destino</label>
       <select id="destino" required>
@@ -21,6 +23,7 @@
         <option value="MDZ">MDZ - Mendoza</option>
       </select>
     </div>
+
     <div class="campo">
       <label>Opciones de viaje</label>
       <div class="radio-group">
@@ -28,19 +31,24 @@
         <label><input type="radio" name="tipo" value="ida-vuelta"> Ida/Vuelta</label>
       </div>
     </div>
+
     <div class="campo">
       <label for="fecha-ida">Fecha ida</label>
       <input type="date" id="fecha-ida" required>
     </div>
+
     <div class="campo">
       <label for="fecha-vuelta">Fecha vuelta</label>
       <input type="date" id="fecha-vuelta">
     </div>
+
     <div class="campo">
       <label for="pasajeros">Pasajeros</label>
       <input type="number" id="pasajeros" min="1" value="1" required>
     </div>
+
     <button type="submit">CALCULAR PRECIO</button>
+
     <div id="mensaje-error" class="error"></div>
     <div id="resultado" class="resultado"></div>
   </form>
